@@ -7,6 +7,8 @@
  *
  */
 
+var height = $(window).height();
+$('#section-one').css('height', height+'px');
 
 $(document).ready(function(){
 
@@ -32,6 +34,4 @@ App = function() {
 
 App.prototype.initialUI = function() {
   var height = $(window).height();
-
-  $('.scrollblock').css('height', height+'px');
 }
