@@ -21,11 +21,30 @@
   </section>
   <section class="scrollblock" id="section-two">
     <div id='map' class="dark"></div>
-    <div id="about-the-floods">
-      <div class="text">
-        <p>Historic, and in some spots unprecedented, amounts of rain fell across portions of Colorado over the week of <b>September 9, 2013</b> to <b>September 16, 2013</b>, causing widespread, damaging flooding, and tragically taking lives in its wake. This once in a 100 (or even 1000) year event has, from a meteorological perspective, been extraordinary.</p>
-        <p>It is estimated, that </p>
+    <div class="text">
+      <br />
+      <p>
+        <span class="text-large"><b>September 2013</b></span> was Colorado's wettest month on record, an incredible 2.7" above average state-wide. Most of the precipitation that fell, occcurred over a 7 day stretch between <b>September 9, 2013</b> to <b>September 16, 2013</b> across northeast Colorado.<br />
+      </p>
+      <div id="seven-day-graphic">
+        <div class="day">Monday <img src="img/rain-icon.jpeg"></img></div>
+        <div class="day">Tuesday <img src="img/rain-icon.jpeg"></img></div>
+        <div class="day">Wednesday <img src="img/rain-icon.jpeg"></img></div>
+        <div class="day">Thursday <img src="img/rain-icon.jpeg"></img></div>
+        <div class="day">Friday <img src="img/rain-icon.jpeg"></img></div>
+        <div class="day">Saturday <img src="img/rain-icon.jpeg"></img></div>
+        <div class="day">Sunday <img src="img/rain-icon.jpeg"></img></div>
       </div>
+      <p>
+        Boulder, Colorado was particularly hard hit during this period. 
+      </p>
+      <div id="donut-1-container">
+        <div id="donut-tooltip"></div>
+        <div id="boulder-title"><b>Boulder</b> received <br /><b>18.16"</b> of precipitation <br />in SEVEN days, or <br /><span class="number-large">89% </span>of <br /><b>annual</b> average</div>
+        <div id="donut-1"></div>
+      </div>
+      <p>Historic, and in some spots unprecedented, amounts of rain fell across portions of Colorado over the week of <b>September 9, 2013</b> to <b>September 16, 2013</b>, causing widespread, damaging flooding, and tragically taking lives in its wake. This once in a 100 (or even 1000) year event has, from a meteorological perspective, been extraordinary.</p>
+      <p>It is estimated, that </p>
     </div>
   </section>
   <section class="scrollblock" id="section-three">
@@ -48,10 +67,14 @@
 
 <script src="js/jquery-1.8.3.js"></script>
 <script src="js/jquery.scrollorama.js"></script>
+<script src="js/jquery.appear.js"></script>
 <script src="js/d3.v3.min.js"></script>
 <!--<script src="js/d3.geo.projection.v0.min.js"></script>-->
 <script src="js/topojson.v1.min.js"></script>
+<script src="http://d3js.org/d3.geo.tile.v0.min.js"></script>
 
 <script src="js/app.js"></script>
 <script src="js/effects.js"></script>
+<script src="js/donut.js"></script>
+<script src="js/map.js"></script>
 </html>
