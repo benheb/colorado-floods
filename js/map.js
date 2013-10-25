@@ -1,6 +1,6 @@
 App.prototype.initMap = function() {
   var width = Math.max(960, window.innerWidth),
-      height = 300,
+      height = $(window).height(),
       prefix = prefixMatch(["webkit", "ms", "Moz", "O"]);
 
   var tile = d3.geo.tile()

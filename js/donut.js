@@ -7,6 +7,8 @@ App.prototype.donutChart = function() {
   this.chartHeight = 400;
   this.chartRadius = Math.min(this.chartWidth, this.chartHeight) / 2;
 
+  var color = d3.scale.ordinal()
+    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
 
   var arc = d3.svg.arc()
       .outerRadius(this.chartRadius - 15)
@@ -35,6 +37,8 @@ App.prototype.donutChart = function() {
 
     self.chartGraphic.append("path")
         .attr("d", arc)
+        .style("fill", function(d) { return color(d.data.month); })
+        /*
         .style("fill", function(d) { 
           if ( d.data.month === "Sep" ) {
             return "#3498db";
@@ -42,6 +46,7 @@ App.prototype.donutChart = function() {
             return "#2980b9";
           }
         })
+        */
         .on('mouseover', function(d, e, f) {
           clearTimeout(self.hideTooltip);
 
@@ -64,7 +69,7 @@ App.prototype.donutChart = function() {
         .attr("dy", ".35em")
         .style("fill", "#000")
         .style("text-anchor", "middle")
-        .text(function(d) { return '20.23" Annual' });
+        .text(function(d) { return '20.23" Annually' });
 
     self.outerRadial();
 
@@ -94,10 +99,10 @@ App.prototype.updateOuterRadial = function() {
   var pi = Math.PI;
 
 
-  var x = $(window).scrollTop() + 380;
+  var x = $(window).scrollTop() + 100;
   var start = $('#donut-1').offset().top;
   var end = 2 * pi * 0.89;
-  var radian = end - ( ( x - start ) * ( end / ( 380 - start ) ));
+  var radian = end - ( ( x - start ) * ( end / ( 100 - start ) ));
   if ( radian > end ) return;
 
   if ( this.arcPath ) {

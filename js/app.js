@@ -23,15 +23,32 @@ $(document).ready(function(){
 
   });
   */
+  $('#loader').fadeOut('fast');
   app = new App();
 });
 
 App = function() {
+  var self = this;
+
   this._wire();
   this.effects();
   this.initMap();
   this.donutChart();
+
+  //Detect when sections appear 
+  $('#video-boulder-container').appear();
+  $('#video-boulder-container').on('appear', function() {
+    self.playVideo('video-boulder'); //temp
+    $(this).addClass('viewed');
+  });
+  
+  $('#video-boulder-container').on('disappear', function() {
+    $(this).removeClass('viewed');
+    self.stopVideo( 'video-boulder' );
+  });
+
   $(window).load(function(){$('html, body').animate({scrollTop:0}, 'fast');});
+
 }
 
 App.prototype._wire = function() {
@@ -56,4 +73,48 @@ App.prototype._wire = function() {
   $(window).scroll(function(e) {
     self.updateOuterRadial();
   });
+}
+
+/*
+ * HTML5 Video Controls
+ * 
+ * 
+ */
+App.prototype.playVideo = function( val ) {
+  var self = this;
+  console.log('play')
+  var canvas = document.getElementById( val+'-canvas' );
+  if ( !canvas ) return; 
+  var ctx    = canvas.getContext('2d');
+  var video  = document.getElementById( val );
+  
+  video.addEventListener('play', function () {
+    var $this = this; //cache
+    var ratio = video.videoWidth / video.videoHeight;
+    var w = video.videoWidth - 50;
+    var h = parseInt(w / ratio, 10);
+    canvas.width = w;
+    canvas.height = h;
+    ctx.width = w;
+    ctx.height = h;
+    
+    (function loop() {
+        if (!$this.paused && !$this.ended) {
+            ctx.drawImage($this, 10, 10);
+            setTimeout(loop, 1000 / 60); // drawing at 30fps
+        }
+    })();
+  }, 0);
+    
+  video.play();
+  video.volume = 0.2  
+}
+
+App.prototype.stopVideo = function( val ) {
+  if (!val) return;
+  var video  = document.getElementById( val );
+  
+  if ( !video ) return;
+  video.pause();
+  
 }
