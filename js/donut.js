@@ -99,10 +99,10 @@ App.prototype.updateOuterRadial = function() {
   var pi = Math.PI;
 
 
-  var x = $(window).scrollTop() + 100;
+  var x = $(window).scrollTop() + 200;
   var start = $('#donut-1').offset().top;
   var end = 2 * pi * 0.89;
-  var radian = end - ( ( x - start ) * ( end / ( 100 - start ) ));
+  var radian = end - ( ( x - start ) * ( end / ( 200 - start ) ));
   if ( radian > end ) return;
 
   if ( this.arcPath ) {

@@ -15,11 +15,11 @@
   <div id='map' class="dark"></div>
   <div id="loader"></div>
   <div id="header">
-    <h3 class="text-large">Colorado Floods 2013</h3>
+    <h3 class="text-large">High Waters</h3>
   </div>
   <!-- section one: welcome -->
   <div class="scrollblock" id="section-one">
-    <span><h1>Floody Waters</h1><h2>September, 2013</h2></span>
+    <span><h1>High Water</h1><h2>Colorado Floods, 2013</h2></span>
   </div>
 
   
@@ -44,8 +44,9 @@
       <br />
       <h3 class="text-large">Boulder, Colorado</h3>
       <p>
-        Boulder, Colorado was particularly hard hit during this period. 
+        Boulder was particularly hard hit during this period. CoCoRaHS storm reports ranged from 12" to 21" across the Front Range foothills of Boulder County, equivalent to a major tropical cyclone, or nearly that of an entire year's worth of precipitation for the region. 
       </p>
+      <br />
       <div id="donut-1-container">
         <div id="donut-tooltip"></div>
         <div id="boulder-title"><b>Boulder</b> received <br /><b>18.16"</b> of precipitation <br />in SEVEN days, or <br /><span class="number-large">89% </span>of <br /><b>annual</b> average</div>
@@ -66,32 +67,77 @@
       </div>
       
       <div id="video-boulder-container">
-        <canvas id="video-boulder-canvas" class="video-canvas"></canvas>
+        <div class="play" id="play-boulder">Play</div>
+        <canvas id="video-boulder-canvas" class="video-canvas">
+        </canvas>
         <video id="video-boulder" class="video" loop>
           <source src=data/boulder-flood.mp4 type=video/mp4>
         </video>
       </div>
-
-      <p>Historic, and in some spots unprecedented, amounts of rain fell across portions of Colorado over the week of <b>September 9, 2013</b> to <b>September 16, 2013</b>, causing widespread, damaging flooding, and tragically taking lives in its wake. This once in a 100 (or even 1000) year event has, from a meteorological perspective, been extraordinary.</p>
-      <p>It is estimated, that </p>
     </div>
   </div>
 
-  <!-- section four: jamestown -->
+  <!-- section four: Lyons -->
   <div class="scrollblock" id="section-four">
     <div class="text">
-      <h3>The Setup</h3>
+      <br />
+      <br />
+      <h3 class="text-large">Lyons, Colorado</h3>
+      <h5>"A town cut off"</h5>
       <p>It is fair to say that there were multiple players which came together in concert to produce the flooding we have seen over the past week. Here are some of the factors: A stalled out frontal boundary provided the energy, or lift, needed to create the rain showers. Then there was the strong late season monsoon which acted like a conveyor belt to bring deep moisture from Mexico into the Four Corners region; this supplied the humidity to turn our showers into the intense rainfall. The collision of the monsoon pushing north, and the frontal boundary pushing south, caused everything to stall overhead for several days, the result being the tremendous flooding the region has seen.<p>
       <p>With a blocking ridge of high pressure to our east, and thus the very slow progression of the upper low to our west, all the right ingredients came into play to bring the Front Range an historic late season rain.</p>
       <p>Had that cold front been stronger, it would likely have moved farther south before stalling. The opposite is true if the cold front had been weaker the stall probably would have been farther north. As it happened, the strength was near perfect ( or imperfect rather ), for heavy downpours along the urban corridor.</p>
     </div>
   </div>
 
-  <!-- section five: eastern plains -->
+  <!-- full screen video placeholder --> 
+  <div class="scrollblock" id="fullscreen">
+    <div id="video-fullscreen-container">
+      <canvas id="video-fullscreen-canvas" class="video-canvas">
+      </canvas>
+      <video id="video-fullscreen" class="video" loop>
+        <source src=data/wall-street-journal.mov type=video/mp4>
+      </video>
+    </div>
+  <div>
+
+  <!-- section five: estes park -->
   <div class="scrollblock" id="section-five">
     <div class="text">
+      <br />
+      <br />
+      <h3 class="text-large">Estes Park</h3>
       <h3>Historic Context</h3>
       <p>For a bit more perspective on just how much rain fell during the last week, we can take a look at climatological norms, and other historic rain events. Several places along the Front Range received a years worth of precipitation during the event, with the majority falling during a 48 hour period last Wednesday and Thursday.</p>
+    </div>
+  </div>
+
+  <!-- section five: eastern plains -->
+  <div class="scrollblock" id="section-six">
+    <div class="text">
+      <br />
+      <br />
+      <h3 class="text-large">Eastern Plains</h3>
+      <h3>Historic Context</h3>
+      <p>For a bit more perspective on just how much rain fell during the last week, we can take a look at climatological norms, and other historic rain events. Several places along the Front Range received a years worth of precipitation during the event, with the majority falling during a 48 hour period last Wednesday and Thursday.</p>
+    </div>
+  </div>
+
+  <!-- section five: post  -->
+  <div class="scrollblock" id="section-seven">
+    <div class="text">
+      <br />
+      <br />
+      <h3 class="text-large">Post Deluge</h3>
+      <h5>"A flood of biblical proportion" <span class="light">- NWS Boulder</span></h5>
+      <p>For a bit more perspective on just how much rain fell during the last week, we can take a look at climatological norms, and other historic rain events. Several places along the Front Range received a years worth of precipitation during the event, with the majority falling during a 48 hour period last Wednesday and Thursday.</p>
+      <div id="video-precip-animation-container">
+        <canvas id="video-precip-animation-canvas" class="video-canvas">
+        </canvas>
+        <video id="video-precip-animation" class="video" loop>
+          <source src=data/precip-totals-animation.mov type=video/mp4>
+        </video>
+      </div>
     </div>
   </div>
   

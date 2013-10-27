@@ -8,6 +8,7 @@
  */
 var height = $(window).height();
 $('#section-one').css('height', height+'px');
+$('#fullscreen').css('height', height+'px');
 
 $(document).ready(function(){
 
@@ -36,16 +37,35 @@ App = function() {
   this.donutChart();
 
   //Detect when sections appear 
-  $('#video-boulder-container').appear();
-  $('#video-boulder-container').on('appear', function() {
-    self.playVideo('video-boulder'); //temp
-    $(this).addClass('viewed');
+  $('#video-boulder-container, #video-precip-animation-container, #video-fullscreen-container').appear();
+
+  $('#video-precip-animation-container').on('appear', function() {
+    self.playVideo('video-precip-animation'); 
+  });
+
+  $('#video-fullscreen-container').on('appear', function() {
+    self.playVideo('video-fullscreen'); 
   });
   
-  $('#video-boulder-container').on('disappear', function() {
-    $(this).removeClass('viewed');
-    self.stopVideo( 'video-boulder' );
+  $('#video-precip-animation-container').on('disappear', function() {
+    self.stopVideo('video-precip-animation'); 
   });
+
+  $('#video-fullscreen-container').on('disappear', function() {
+    self.stopVideo('video-fullscreen'); 
+  });
+  
+
+  $('#play-boulder').on('click', function() {
+    if ( $(this).hasClass('playing') ) {
+      $(this).removeClass('playing').html('PLAY');
+      self.stopVideo( 'video-boulder' );
+    } else {
+      self.playVideo('video-boulder'); //temp
+      $(this).addClass('playing').html('PAUSE');
+    }
+  });
+  
 
   $(window).load(function(){$('html, body').animate({scrollTop:0}, 'fast');});
 
@@ -82,7 +102,6 @@ App.prototype._wire = function() {
  */
 App.prototype.playVideo = function( val ) {
   var self = this;
-  console.log('play')
   var canvas = document.getElementById( val+'-canvas' );
   if ( !canvas ) return; 
   var ctx    = canvas.getContext('2d');
@@ -91,7 +110,7 @@ App.prototype.playVideo = function( val ) {
   video.addEventListener('play', function () {
     var $this = this; //cache
     var ratio = video.videoWidth / video.videoHeight;
-    var w = video.videoWidth - 50;
+    var w = video.videoWidth;
     var h = parseInt(w / ratio, 10);
     canvas.width = w;
     canvas.height = h;
@@ -100,7 +119,7 @@ App.prototype.playVideo = function( val ) {
     
     (function loop() {
         if (!$this.paused && !$this.ended) {
-            ctx.drawImage($this, 10, 10);
+            ctx.drawImage($this, 0, 0);
             setTimeout(loop, 1000 / 60); // drawing at 30fps
         }
     })();
@@ -115,6 +134,7 @@ App.prototype.stopVideo = function( val ) {
   var video  = document.getElementById( val );
   
   if ( !video ) return;
+  console.log('stop video: ', val);
   video.pause();
   
 }

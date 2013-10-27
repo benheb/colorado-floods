@@ -18,33 +18,21 @@ body {
 }
 
 #header {
-  position:fixed;
-  opacity:1;
-  top:0;
-  width:100%;
-  height:50px;
-  box-shadow: 0px 0px 18px -1px #444;
-  z-index:105;
-  background:#FEFEFE;
-  overflow:hidden;
-  background-image: url('../img/header.png');
-  background-position: center center;
-  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id…0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
-  filter: gray;
-  -webkit-filter: grayscale(100%);
-}
-
-#header:hover {
-   filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
-  -webkit-filter: grayscale(0%);
-  cursor:pointer;
+  position: fixed;
+  opacity: 1;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  box-shadow: 0px 0px 13px -3px #444;
+  z-index: 105;
+  background: #ecf0f1;
+  overflow: hidden;
 }
 
 #header h3 {
   margin-top: 4px;
   margin-left: 10px;
-  color: #2980b9;
-  text-shadow: 2px 2px 3px #E3E8EC;
+  color:#2980b9;
 }
 
 
@@ -86,6 +74,10 @@ h2 {
   text-shadow: 3px 3px 11px #222;
 }
 
+.light {
+  color:#666;
+}
+
 .number-large {
   font-size:2em;
 }
@@ -101,6 +93,35 @@ h2 {
 
 .layer {
   position: absolute;
+}
+
+svg#places {
+  z-index: 100;
+  position:relative;
+}
+
+.places {
+  fill:#ecf0f1;
+  stroke:#3498db;
+  stroke-width:2px;
+  opacity:0.9;
+  cursor:pointer;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.places:hover {
+  stroke-width:6;
+}
+
+.places-label {
+  text-anchor:middle;
+}
+
+path {
+  fill:none;
 }
 
 .tile {
@@ -130,9 +151,26 @@ h2 {
 .text {
   margin: auto 22%;
   max-width: 800px;
+  padding-bottom:20px;
 }
 
 .video-canvas {
+  width:100%;
+  height:100%;
+}
+
+#video-boulder-canvas {
+  background: url('../img/flood-video.png') no-repeat;
+  background-size: 100%;
+}
+
+.video-precip-animation-canvas {
+  width:100%;
+  height:100%;
+  margin:-5px;
+}
+
+.video-fullscreen-canvas {
   width:100%;
   height:100%;
   margin:-5px;
@@ -186,7 +224,7 @@ h2 {
 
 #map-view-left {
   background: #F7F7F7;
-  width: 22%;
+  width: 15%;
   position: absolute;
   height: 300px;
   pointer-events:auto;
@@ -194,7 +232,7 @@ h2 {
 
 #map-view-right {
   background: #F7F7F7;
-  width: 22%;
+  width: 15%;
   position: absolute;
   height: 300px;
   right:0px;
@@ -208,7 +246,7 @@ h2 {
   box-shadow: inset 0px 0px 6px 0px #999;
   background: none;
   position: relative;
-  margin: auto 22%;
+  margin: auto 15%;
   pointer-events:none;
   /*
   background-image: url(../img/inset-placeholder.png); 
@@ -272,10 +310,32 @@ h2 {
   height:25px;
 }
 
+.play {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #272323;
+  padding: 18px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 7px;
+  font-weight: bold;
+  border: 2px solid #FFF;
+  color: #fff;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.play:hover {
+  cursor:pointer;
+  border:2px solid #666;
+}
+
 #section-three #video-boulder-container {
   width:100%;
   height:325px;
   margin-bottom:20px;
+  position:relative;
 }
 
 #boulder-title {
@@ -289,8 +349,18 @@ h2 {
   background: #F7F7F7;
 }
 
+#section-three .text {
+  opacity:1;
+}
+
+#video-fullscreen-container {
+  width:100%;
+  height:100%;
+  position:relative;
+}
+
 #section-four {
-  margin-top:-10px;
+  margin-top:-20px;
   z-index: 75;
   position:relative;
   background: #F7F7F7;
@@ -300,6 +370,31 @@ h2 {
   margin-top:-10px;
   z-index: 75;
   position:relative;
+  background: #F7F7F7;
+}
+
+#section-six{
+  margin-top:-10px;
+  z-index: 75;
+  position:relative;
+  background: #F7F7F7;
+}
+
+#section-seven{
+  margin-top:-10px;
+  z-index: 75;
+  position:relative;
+  background: #F7F7F7;
+}
+
+#section-seven #video-precip-animation-container {
+  width:100%;
+  height:475px;
+  margin-bottom:20px;
+  position:relative;
+}
+
+#fullscreen {
   background: #F7F7F7;
 }
 

@@ -1,4 +1,9 @@
 App.prototype.initMap = function() {
+
+  var down = false;
+  $(document).on('mousedown', function() { down = true });
+  $(document).on('mouseup', function() { down = false });
+
   var width = Math.max(960, window.innerWidth),
       height = $(window).height(),
       prefix = prefixMatch(["webkit", "ms", "Moz", "O"]);
@@ -18,7 +23,7 @@ App.prototype.initMap = function() {
   var zoom = d3.behavior.zoom()
       .scale(projection.scale() * 2 * Math.PI)
       .scaleExtent([1 << 18, 1 << 23])
-      .translate(projection([-104.8, 40.0000]).map(function(x) { return -x; }))
+      .translate(projection([-105.1, 40.1000]).map(function(x) { return -x; }))
       .on("zoom", zoomed);
 
   var map = d3.select("#map")
@@ -33,9 +38,11 @@ App.prototype.initMap = function() {
   var info = map.append("div")
       .attr("class", "info");
 
-  zoomed();
+  zoomed( true );
 
-  function zoomed() {
+  function zoomed( initial ) {
+    //if ( !down && !initial ) return;
+
     var tiles = tile
         .scale(zoom.scale())
         .translate(zoom.translate())
@@ -74,7 +81,72 @@ App.prototype.initMap = function() {
                 .attr("d", tilePath);
           });
         });
+
+      
+    d3.selectAll("circle")
+      .attr("cx", function(d) {
+        return projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])[0];
+      })
+      .attr("cy", function(d) {
+        return projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])[1];
+      });
+
+    d3.selectAll('.places-label')
+      .attr("dx", function(d) {
+        return projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])[0];
+      })
+      .attr("dy", function(d) {
+        return projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])[1] - 12;
+      });
   }
+
+ var svg = d3.select("#map").append("svg")
+    .attr('id', 'places')
+    .attr("width", width)
+    .attr("height", height);
+
+  var path = d3.geo.path()
+    .projection(projection);
+
+  var g = svg.append("g");
+    
+  d3.json("data/places.json", function(error, places) {
+    
+    g.selectAll('circle')
+      .data( places.features )
+    .enter().append('circle')
+      .attr('class', 'places')
+      .attr("cx", function(d) {
+        return projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])[0];
+      })
+      .attr("cy", function(d) {
+        return projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])[1];
+      })
+      .attr("r", 10)
+      .on('click', function(d) {
+        var id = d.properties.Place.toLowerCase().replace(/ /g, '-');
+        var height = $(window).height();
+        var top = $(window).scrollTop();
+        var sections = { "boulder": 2, "estes-park": 3, "lyons": 4, "eastern-plains": 5 }
+        $('body,html').animate({scrollTop: ( height ) * sections[ id ] }, 2400);
+      });
+
+    g.selectAll('text')
+      .data( places.features )
+    .enter().append('text')
+      .attr('class', 'places-label')
+      .attr("dx", function(d) {
+        return projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])[0];
+      })
+      .attr("dy", function(d) {
+        return projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])[1] - 12;
+      })
+      .text(function(d) {
+        return d.properties.Place;
+      });
+      
+
+  });
 
   function mousemoved() {
     info.text(formatLocation(projection.invert(d3.mouse(this)), zoom.scale()));

@@ -1,0 +1,70 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "Place": "Boulder"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.2794075012207,
+          40.017229330321484
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Place": "Lyons"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.2706527709961,
+          40.223910141523774
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Place": "Estes Park"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -105.5185317993164,
+          40.3775438124365
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Place": "Eastern Plains"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.66880798339844,
+          40.38944285970336
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "Place": "Aurora"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -104.84939575195311,
+          39.734650174341866
+        ]
+      }
+    }
+  ]
+}
