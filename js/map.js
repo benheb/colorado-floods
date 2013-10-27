@@ -1,8 +1,18 @@
 App.prototype.initMap = function() {
 
-  var down = false;
-  $(document).on('mousedown', function() { down = true });
-  $(document).on('mouseup', function() { down = false });
+  var down = false, savedScale = null, savedTranslation = null;
+  
+  $('#map-drag').on('click', function() {
+    if ( down ) {
+      $(this).removeClass('selected');
+      $('#intro-inset-map, #map-view-outer').css('pointer-events','auto');
+      down = false;
+    } else {
+      $(this).addClass('selected');
+      $('#intro-inset-map, #map-view-outer').css('pointer-events','none');
+      down = true;
+    }
+  });
 
   var width = Math.max(960, window.innerWidth),
       height = $(window).height(),
@@ -41,63 +51,81 @@ App.prototype.initMap = function() {
   zoomed( true );
 
   function zoomed( initial ) {
-    //if ( !down && !initial ) return;
+    if ( !down && !initial ) {
+      // save the current scales
+     if (savedScale === null){
+         savedScale = zoom.scale();
+     }
+      if (savedTranslation === null){
+         savedTranslation = zoom.translate();
+     }
+      
+    } else {
+      if (savedScale !== null){
+           zoom.scale(savedScale)
+           savedScale = null
+       }
+       if (savedTranslation !== null){
+           zoom.translate(savedTranslation)
+           savedTranslation = null
+       }
+    
+      var tiles = tile
+          .scale(zoom.scale())
+          .translate(zoom.translate())
+          ();
 
-    var tiles = tile
-        .scale(zoom.scale())
-        .translate(zoom.translate())
-        ();
+      projection
+          .scale(zoom.scale() / 2 / Math.PI)
+          .translate(zoom.translate());
 
-    projection
-        .scale(zoom.scale() / 2 / Math.PI)
-        .translate(zoom.translate());
+      var image = layer
+          .style(prefix + "transform", matrix3d(tiles.scale, tiles.translate))
+        .selectAll(".tile")
+          .data(tiles, function(d) { return d; });
 
-    var image = layer
-        .style(prefix + "transform", matrix3d(tiles.scale, tiles.translate))
-      .selectAll(".tile")
-        .data(tiles, function(d) { return d; });
+      image.exit()
+          .each(function(d) { this._xhr.abort(); })
+          .remove();
 
-    image.exit()
-        .each(function(d) { this._xhr.abort(); })
-        .remove();
+      image.enter().append("svg")
+          .attr("class", "tile")
+          .style("left", function(d) { return d[0] * 256 + "px"; })
+          .style("top", function(d) { return d[1] * 256 + "px"; })
+          .each(function(d) {
+            var svg = d3.select(this);
+            this._xhr = d3.json("http://" + ["a", "b", "c"][(d[0] * 31 + d[1]) % 3] + ".tile.openstreetmap.us/vectiles-highroad/" + d[2] + "/" + d[0] + "/" + d[1] + ".json", function(error, json) {
+              var k = Math.pow(2, d[2]) * 256; // size of the world in pixels
 
-    image.enter().append("svg")
-        .attr("class", "tile")
-        .style("left", function(d) { return d[0] * 256 + "px"; })
-        .style("top", function(d) { return d[1] * 256 + "px"; })
-        .each(function(d) {
-          var svg = d3.select(this);
-          this._xhr = d3.json("http://" + ["a", "b", "c"][(d[0] * 31 + d[1]) % 3] + ".tile.openstreetmap.us/vectiles-highroad/" + d[2] + "/" + d[0] + "/" + d[1] + ".json", function(error, json) {
-            var k = Math.pow(2, d[2]) * 256; // size of the world in pixels
+              tilePath.projection()
+                  .translate([k / 2 - d[0] * 256, k / 2 - d[1] * 256]) // [0°,0°] in pixels
+                  .scale(k / 2 / Math.PI);
 
-            tilePath.projection()
-                .translate([k / 2 - d[0] * 256, k / 2 - d[1] * 256]) // [0°,0°] in pixels
-                .scale(k / 2 / Math.PI);
-
-            svg.selectAll("path")
-                .data(json.features.sort(function(a, b) { return a.properties.sort_key - b.properties.sort_key; }))
-              .enter().append("path")
-                .attr("class", function(d) { return d.properties.kind; })
-                .attr("d", tilePath);
+              svg.selectAll("path")
+                  .data(json.features.sort(function(a, b) { return a.properties.sort_key - b.properties.sort_key; }))
+                .enter().append("path")
+                  .attr("class", function(d) { return d.properties.kind; })
+                  .attr("d", tilePath);
+            });
           });
+
+        
+      d3.selectAll("circle")
+        .attr("cx", function(d) {
+          return projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])[0];
+        })
+        .attr("cy", function(d) {
+          return projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])[1];
         });
 
-      
-    d3.selectAll("circle")
-      .attr("cx", function(d) {
-        return projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])[0];
-      })
-      .attr("cy", function(d) {
-        return projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])[1];
-      });
-
-    d3.selectAll('.places-label')
-      .attr("dx", function(d) {
-        return projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])[0];
-      })
-      .attr("dy", function(d) {
-        return projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])[1] - 12;
-      });
+      d3.selectAll('.places-label')
+        .attr("dx", function(d) {
+          return projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])[0];
+        })
+        .attr("dy", function(d) {
+          return projection([d.geometry.coordinates[0], d.geometry.coordinates[1]])[1] - 12;
+        });
+    }
   }
 
  var svg = d3.select("#map").append("svg")

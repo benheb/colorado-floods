@@ -219,7 +219,7 @@ path {
   overflow: hidden;
   z-index: 100;
   position: relative;
-  pointer-events:none;
+  pointer-events: auto;
 }
 
 #map-view-left {
@@ -227,7 +227,6 @@ path {
   width: 15%;
   position: absolute;
   height: 300px;
-  pointer-events:auto;
 }
 
 #map-view-right {
@@ -247,13 +246,34 @@ path {
   background: none;
   position: relative;
   margin: auto 15%;
-  pointer-events:none;
   /*
   background-image: url(../img/inset-placeholder.png); 
   background-repeat:no-repeat;
   background-attachment:fixed;
   background-position:center; 
   */
+}
+
+#map-drag {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+  pointer-events: auto;
+  background: #ecf0f1;
+  border-radius: 82px;
+  padding: 2px;
+  padding-bottom: 3px;
+}
+
+#map-drag:hover {
+  cursor:pointer;
+  background:#bdc3c7;
+}
+
+#map-drag.selected {
+  background:#3498db;
 }
 
 #section-three{
