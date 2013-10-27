@@ -5,10 +5,12 @@ App.prototype.initMap = function() {
   $('#map-drag').on('click', function() {
     if ( down ) {
       $(this).removeClass('selected');
+      $('#map-tip').hide();
       $('#intro-inset-map, #map-view-outer').css('pointer-events','auto');
       down = false;
     } else {
       $(this).addClass('selected');
+      $('#map-tip').show();
       $('#intro-inset-map, #map-view-outer').css('pointer-events','none');
       down = true;
     }

@@ -180,6 +180,16 @@ path {
   display:none;
 }
 
+.location-coords {
+  font-size: 0.6em;
+  margin-top: -15px;
+}
+
+.twitter-embed {
+  width:75%;
+  margin:auto;
+}
+
 #section-one {
   z-index: 115;
   text-shadow: 0 1px 0 #000;
@@ -258,22 +268,54 @@ path {
   position: absolute;
   right: 10px;
   top: 10px;
-  width: 30px;
+  width: 90px;
   height: 30px;
   pointer-events: auto;
   background: #ecf0f1;
-  border-radius: 82px;
+  border-radius: 3px;
   padding: 2px;
   padding-bottom: 3px;
+  text-align: center;
+  font-weight: bold;
+  color: #bdc3c7;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 #map-drag:hover {
   cursor:pointer;
-  background:#bdc3c7;
+  color:#3498db;
 }
 
 #map-drag.selected {
   background:#3498db;
+  color:#ecf0f1;
+}
+
+#map-tip {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 55px;
+  width: 90px;
+  overflow:hidden;
+  pointer-events: auto;
+  background: #ecf0f1;
+  opacity: 0.8;
+  border-radius: 3px;
+  padding: 2px;
+  padding-bottom: 3px;
+  text-align: center;
+  font-weight: bold;
+  color: #444;
+  font-size: 0.7em;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  line-height: 1.5em;
 }
 
 #section-three{
