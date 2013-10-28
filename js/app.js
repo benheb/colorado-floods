@@ -41,7 +41,7 @@ App = function() {
   $('#video-boulder-container, #video-precip-animation-container, #video-fullscreen-container, #video-fullscreen-post-deluge-container').appear();
 
   $('#video-precip-animation-container').on('appear', function() {
-    self.playVideo('video-precip-animation'); 
+    self.playVideo('video-precip-animation');
   });
 
   $('#video-fullscreen-container').on('appear', function() {

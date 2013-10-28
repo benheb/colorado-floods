@@ -393,6 +393,11 @@ path {
   height:25px;
 }
 
+#warning-siren {
+  width:300px;
+  margin:auto;
+}
+
 .play {
   position: absolute;
   top: 10px;
