@@ -460,6 +460,16 @@ path {
   background: #F7F7F7;
 }
 
+#section-four #lyons-img {
+  height:auto;
+  overflow:hidden;
+  width:100%;
+}
+
+#lyons-img img {
+  width:100%;
+}
+
 #section-five{
   margin-top:-10px;
   z-index: 75;

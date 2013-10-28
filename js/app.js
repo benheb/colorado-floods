@@ -28,6 +28,7 @@ $(document).ready(function(){
 
   $('#loader').fadeOut('fast');
 
+  console.log('APP READY');
   $(window).load(function(){$('html, body').animate({scrollTop:0}, 'fast');});
   
   app = new App();
