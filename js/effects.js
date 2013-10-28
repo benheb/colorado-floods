@@ -22,5 +22,7 @@ App.prototype.effects = function() {
   //scrollorama.animate('#section-two #map',{ delay: 400, duration: 100, property:'opacity', start:0,end:1});
   //scrollorama.animate('#section-two #about-the-floods',{ delay: 400, duration: 300, property:'margin-top', start:300,end:0});
 
-  scrollorama.animate('#video-fullscreen-canvas',{ delay: 200, duration: 300, property:'opacity', start:0,end:1});
+  scrollorama.animate('#video-fullscreen-canvas',{ delay: 300, duration: 450, property:'opacity', start:0,end:1});
+
+  scrollorama.animate('#video-fullscreen-post-deluge-canvas',{ delay: 300, duration: 500, property:'opacity', start:0,end:1});
 }

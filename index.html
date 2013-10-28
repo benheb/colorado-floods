@@ -15,7 +15,7 @@
   <div id='map' class="dark"></div>
   <div id="loader"></div>
   <div id="header">
-    <h3 class="text-large">High Waters</h3>
+    <span id="header-left"><a href="http://www.weather5280.com">Weather5280</a></span><span id="header-right">High Water</span>
   </div>
   <!-- section one: welcome -->
   <div class="scrollblock" id="section-one">
@@ -57,7 +57,7 @@
       </div>
       <br /><br />
       <p>
-        In a region accustomed to 300 days of sunshine each year, the semi-arid climate of Colorado's Front Range rarely sees consecutive days of rain in a given year. The monsoonal flow that feeds Colorado's summer storms normally comes to an end week before the floods occured, and predominantly produce short-lived but powerful thunderstorms. There was nothing usual about this week. 
+        In a region accustomed to 300 days of sunshine each year, the semi-arid climate of Colorado's Front Range rarely sees consecutive days of rain in a given year. The monsoonal flow that feeds Colorado's summer storms normally comes to an end weeks before the floods occured, and predominantly produce short-lived but powerful thunderstorms. There was nothing usual about this week. 
       </p>
       <h4>FORECAST: Boulder, CO.</h4><div class="location-coords"> 40.0176° N, 105.2797° W </div>
       <div id="seven-day-graphic">
@@ -69,10 +69,7 @@
         <div class="day">Saturday <img src="img/rain-icon.jpeg"></img></div>
         <div class="day">Sunday <img src="img/rain-icon.jpeg"></img></div>
       </div>
-      <br />
-      <h4>Midnight Panic</h4>
-      <p>Thursday proved to be the height of the storm for Boulder County. After days of rain, the soil had become completely saturated, but the rain did not let up. The canyons west of the city became collection basins for Mother Nature
-      s wrath. Shortly after 11pm Thursday, September 12, a new round of flood warnings were issued for the Boulder area. Stream gauges in the canyon were indicating record surges, some signals being lost as the sensors were overtaken by water. The National Weather Service took to social media to warn:</p> 
+      <p>Thursday proved to be the height of the storm for Boulder County. After days of rain, the soil had become completely saturated, but the rain did not let up. The canyons west of the city became collection basins for Mother Nature's wrath. Shortly after 11pm Thursday, September 12, a new round of flood warnings were issued for the Boulder area. Stream gauges in the canyon were indicating record surges, some signals being lost as the sensors were overtaken by water. The National Weather Service took to social media to warn:</p> 
       <div class="twitter-embed">
         <blockquote class="twitter-tweet"><p>Large wall of water, vehicles, debris coming down Emerson Gulch (4mile Canyon burn area). Go to higher ground! <a href="https://twitter.com/search?q=%23boulderflood&amp;src=hash">#boulderflood</a></p>&mdash; NWS Boulder (@NWSBoulder) <a href="https://twitter.com/NWSBoulder/statuses/378390101186719744">September 13, 2013</a></blockquote>
         <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -157,8 +154,21 @@
           <source src=data/precip-totals-animation.mov type=video/mp4>
         </video>
       </div>
+      <div id="hang-in-there"></div>
     </div>
+
   </div>
+
+  <!-- full screen video placeholder --> 
+  <div class="scrollblock" id="fullscreen-post-deluge">
+    <div id="video-fullscreen-post-deluge-container">
+      <canvas id="video-fullscreen-post-deluge-canvas" class="video-canvas">
+      </canvas>
+      <video id="video-fullscreen-post-deluge" class="video" loop>
+        <source src=data/destruction.mov type=video/mp4>
+      </video>
+    </div>
+  <div>
   
   
 </body>

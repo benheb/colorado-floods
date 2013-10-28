@@ -9,6 +9,7 @@
 var height = $(window).height();
 $('#section-one').css('height', height+'px');
 $('#fullscreen').css('height', height+'px');
+$('#fullscreen-post-deluge').css('height', height+'px');
 
 $(document).ready(function(){
 
@@ -37,7 +38,7 @@ App = function() {
   this.donutChart();
 
   //Detect when sections appear 
-  $('#video-boulder-container, #video-precip-animation-container, #video-fullscreen-container').appear();
+  $('#video-boulder-container, #video-precip-animation-container, #video-fullscreen-container, #video-fullscreen-post-deluge-container').appear();
 
   $('#video-precip-animation-container').on('appear', function() {
     self.playVideo('video-precip-animation'); 
@@ -53,6 +54,14 @@ App = function() {
 
   $('#video-fullscreen-container').on('disappear', function() {
     self.stopVideo('video-fullscreen'); 
+  });
+
+  //-post-deluge
+  $('#video-fullscreen-post-deluge-container').on('appear', function() {
+    self.playVideo('video-fullscreen-post-deluge'); 
+  });
+  $('#video-fullscreen-post-deluge-container').on('disappear', function() {
+    self.stopVideo('video-fullscreen-post-deluge'); 
   });
   
 
@@ -125,6 +134,7 @@ App.prototype.playVideo = function( val ) {
     })();
   }, 0);
     
+  console.log('video place', video)
   video.play();
   video.volume = 0.2  
 }
@@ -133,6 +143,7 @@ App.prototype.stopVideo = function( val ) {
   if (!val) return;
   var video  = document.getElementById( val );
   
+  console.log('stop', val)
   if ( !video ) return;
   console.log('stop video: ', val);
   video.pause();
