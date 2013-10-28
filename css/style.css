@@ -503,3 +503,16 @@ path {
   background: #444;
 }
 
+#fullscreen-post-deluge-blurb {
+  position: absolute;
+  left: 10px;
+  bottom: 150px;
+  color: #FFF;
+  z-index: 110;
+  width: 300px;
+  font-size: 1.5em;
+  line-height: 1.4em;
+  font-weight: bold;
+  margin: auto 13%;
+}
+

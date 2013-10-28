@@ -24,5 +24,5 @@ App.prototype.effects = function() {
 
   scrollorama.animate('#video-fullscreen-canvas',{ delay: 300, duration: 450, property:'opacity', start:0,end:1});
 
-  scrollorama.animate('#video-fullscreen-post-deluge-canvas',{ delay: 300, duration: 500, property:'opacity', start:0,end:1});
+  scrollorama.animate('#video-fullscreen-post-deluge-canvas',{ delay: 300, duration: 600, property:'opacity', start:0,end:1});
 }
