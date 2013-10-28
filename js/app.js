@@ -6,11 +6,6 @@
  * @brendansweather || @weather5280
  *
  */
-var height = $(window).height();
-$('#section-one').css('height', height+'px');
-$('#fullscreen').css('height', height+'px');
-$('#fullscreen-post-deluge').css('height', height+'px');
-
 $(document).ready(function(){
 
   /*
@@ -25,7 +20,16 @@ $(document).ready(function(){
 
   });
   */
+
+  var height = $(window).height();
+  $('#section-one').css('height', height+'px');
+  $('#fullscreen').css('height', height+'px');
+  $('#fullscreen-post-deluge').css('height', height+'px');
+
   $('#loader').fadeOut('fast');
+
+  $(window).load(function(){$('html, body').animate({scrollTop:0}, 'fast');});
+  
   app = new App();
 });
 
@@ -74,9 +78,6 @@ App = function() {
       $(this).addClass('playing').html('PAUSE');
     }
   });
-  
-
-  $(window).load(function(){$('html, body').animate({scrollTop:0}, 'fast');});
 
 }
 
