@@ -17,12 +17,22 @@ App.prototype.effects = function() {
   scrollorama.animate('#section-one h1',{ delay: 100, duration: 500, property:'margin-top', start:(height/2) - 100,end:(height/2) + 100 });
   scrollorama.animate('#section-one h2',{ delay: 100, duration: 500, property:'margin-top', start:(height/2),end:(height/2) + 200 });
 
-  //scrollorama.animate('#section-three #map',{ delay: 100, duration: 500, property: 'opacity', start:0, end:1 });
-  
-  //scrollorama.animate('#section-two #map',{ delay: 400, duration: 100, property:'opacity', start:0,end:1});
-  //scrollorama.animate('#section-two #about-the-floods',{ delay: 400, duration: 300, property:'margin-top', start:300,end:0});
+  scrollorama.animate('#video-fullscreen-container',{ delay: (height / 1.5), duration: 250, property:'opacity', start:0,end:1});
 
-  scrollorama.animate('#video-fullscreen-canvas',{ delay: 300, duration: 450, property:'opacity', start:0,end:1});
+  scrollorama.animate('#video-fullscreen-post-deluge-container',{ delay: (height - 280), duration: 250, property:'opacity', start:0,end:1});
 
-  scrollorama.animate('#video-fullscreen-post-deluge-canvas',{ delay: 300, duration: 600, property:'opacity', start:0,end:1});
+  //section four
+  scrollorama.animate('#lyons-img',{ 
+    delay: 600, 
+    duration: 400, 
+    property:'height', 
+    start: 0,
+    end: 405
+  });
+
+  scrollorama.onBlockChange(function() {
+    console.log('You just scrolled to block#'+scrollorama.blockIndex);
+  });
+
+
 }

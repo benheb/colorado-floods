@@ -33,7 +33,7 @@
     </div> 
   </div>
 
-  <div id="main-map-section">
+  <div class="scrollblock" id="main-map-section">
     <div id='map' class="dark"></div>
     <div id="map-view-outer">
       <div id="map-view-left"></div>
@@ -57,22 +57,71 @@
       <br />
       <div id="donut-1-container">
         <div id="donut-tooltip"></div>
-        <div id="boulder-title"><b>Boulder</b> received <br /><b>18.16"</b> of precipitation <br />in SEVEN days, or <br /><span class="number-large">89% </span>of <br /><b>annual</b> average</div>
+        <div id="boulder-title"><b>Boulder</b> received <br /><b>18.16"</b> of precipitation <br />in EIGHT days, or <br /><span class="number-large">89% </span>of <br /><b>annual</b> average</div>
         <div id="donut-1"></div>
       </div>
       <br /><br />
       <p>
         In a region accustomed to 300 days of sunshine each year, the semi-arid climate of Colorado's Front Range rarely sees consecutive days of rain in a given year. The monsoonal flow that feeds Colorado's summer storms normally comes to an end weeks before the floods occured, and predominantly produce short-lived but powerful thunderstorms. There was nothing usual about this week. 
       </p>
-      <h4>FORECAST: Boulder, CO.</h4><div class="location-coords"> 40.0176° N, 105.2797° W </div>
+      <br />
+      <h4>Daily Totals: Boulder, CO.</h4><div class="location-coords"> 40.0176° N, 105.2797° W </div>
       <div id="seven-day-graphic">
-        <div class="day">Monday <img src="img/rain-icon.jpeg"></img></div>
-        <div class="day">Tuesday <img src="img/rain-icon.jpeg"></img></div>
-        <div class="day">Wednesday <img src="img/rain-icon.jpeg"></img></div>
-        <div class="day">Thursday <img src="img/rain-icon.jpeg"></img></div>
-        <div class="day">Friday <img src="img/rain-icon.jpeg"></img></div>
-        <div class="day">Saturday <img src="img/rain-icon.jpeg"></img></div>
-        <div class="day">Sunday <img src="img/rain-icon.jpeg"></img></div>
+        <div class="day">
+          <div class="day-top">Monday <img src="img/rain-icon.png"></img>
+            <div class="total">0.25"</div>
+          </div>
+          <div id="day-1"></div>
+        </div>
+        <div class="day">
+          <div class="day-top">
+            Tuesday <img src="img/rain-icon.png"></img>
+            <div class="total">1.02"</div>
+          </div>
+          <div id="day-2"></div>
+        </div>
+        <div class="day">
+          <div class="day-top">
+            Wednesday <img src="img/rain-icon.png"></img>
+            <div class="total">1.92"</div>
+          </div>
+          <div id="day-3"></div>
+        </div>
+        <div class="day">
+          <div class="day-top">
+            Thursday <img src="img/rain-icon.png"></img>
+            <div class="total">9.08"</div>
+          </div>
+          <div id="day-4"></div>
+        </div>
+        <div class="day">
+          <div class="day-top">
+            Friday <img src="img/rain-icon.png"></img>
+            <div class="total">2.44"</div>
+          </div>
+          <div id="day-5"></div>
+        </div>
+        <div class="day">
+          <div class="day-top">
+            Saturday <img src="img/rain-icon.png"></img>
+            <div class="total">0.1"</div>
+          </div>
+          <div id="day-6"></div>
+        </div>
+        <div class="day">
+          <div class="day-top">
+            Sunday <img src="img/rain-icon.png"></img>
+            <div class="total">1.94"</div>
+          </div>
+          <div id="day-7"></div>
+        </div>
+        <div class="day">
+          <div class="day-top">
+            Monday <img src="img/rain-icon.png"></img>
+            <div class="total">0.49"</div>
+          </div>
+          <div id="day-8"></div>
+        </div>
       </div>
       <p>Thursday proved to be the height of the storm for Boulder County. After days of rain, the soil had become completely saturated, but the rain did not let up. The canyons west of the city became collection basins for Mother Nature's wrath. Shortly after 11pm Thursday, September 12, a new round of flood warnings were issued for the Boulder area. Stream gauges in the canyon were indicating record surges, some signals being lost as the sensors were overtaken by water. The National Weather Service took to social media to warn:</p> 
       <div class="twitter-embed">
@@ -99,6 +148,18 @@
     </div>
   </div>
 
+    <!-- full screen video placeholder --> 
+  <div class="scrollblock" id="fullscreen">
+    <div id="video-fullscreen-container">
+      <canvas id="video-fullscreen-canvas" class="video-canvas">
+      </canvas>
+      <video id="video-fullscreen" class="video" loop>
+        <source src=data/wall-street-journal.mov type=video/mp4>
+      </video>
+    </div>
+  </div>
+
+
   <!-- section four: Lyons -->
   <div class="scrollblock" id="section-four">
     <div class="text">
@@ -107,26 +168,14 @@
       <h3 class="text-large">Lyons, Colorado</h3>
       <h5>"A town cut off"</h5>
       <p>
-        All roads in and out of Lyons became impassable by midweek. There are just two ways into Lyons, U.S. 36 from the south, and St Vrain Dr from the southwest. The town, population of just over 2,000, became a top priority for the National Guard as roads turned to rivers and bridges were swept away. The Saint Vrain Creek roared like a mighty river, as the canyons immediately adjacent to the town became overwhelmed with runoff. 
+        All roads in and out of Lyons became impassable by midweek. There are just three ways into Lyons, U.S. 36 from the south and from the west, and St Vrain Dr from the southwest. The town, population of just over 2,000, became a top priority for the National Guard as roads turned to rivers and bridges were swept away. 
       </p>
       <br />
-      <div id="lyons-img">
-        <img src="img/lyons.png"></img>
+      <div id="lyons-img-container">
+        <img id="lyons-img" src="img/lyons.png"></img>
       </div>
       <br />
-      <p>More text here for Lyons, possibly some images. </p>
-      <br /><br />
-    </div>
-  </div>
-
-  <!-- full screen video placeholder --> 
-  <div class="scrollblock" id="fullscreen">
-    <div id="video-fullscreen-container">
-      <canvas id="video-fullscreen-canvas" class="video-canvas">
-      </canvas>
-      <video id="video-fullscreen" class="video" loop>
-        <source src=data/wall-street-journal.mov type=video/mp4>
-      </video>
+      <p>Located at the foot of the Rocky Mountains, Lyons proved exceptionally vulnerable for such an event. The St. Vrain River, like all rivers exiting the northern Rockies east of the Continental Divide is a tributary of the South Platte River. It was the confluence of the South and North St. Vrain creeks that proved to overwhelm the infrastructure in Lyons. The creeks and gullies that ordinarily meander through the canyons adjacent to the town turned into raging rivers. </p>
     </div>
   </div>
 
@@ -140,6 +189,7 @@
       <p>For a bit more perspective on just how much rain fell during the last week, we can take a look at climatological norms, and other historic rain events. Several places along the Front Range received a years worth of precipitation during the event, with the majority falling during a 48 hour period last Wednesday and Thursday.</p>
     </div>
   </div>
+
 
   <!-- section five: eastern plains -->
   <div class="scrollblock" id="section-six">
@@ -172,7 +222,7 @@
         <img src="img/24hr-16Sept.png"></img>
       </div>
       <br />
-      <p>In the days and weeks that followed the flooding came a fury of post analysis from meteorologist around the country. The National Weather Service put has compiled a number of different visualizations ranging from precipitation totals maps to archived modeling. The array of images above show 24 hour rainfall totals as depicted by radar, while the animations below shows a cumulative depection of rainfall over the seven days. </p>
+      <p>In the days and weeks that followed the flooding came a fury of post analysis from meteorologist around the country. The National Weather Service put has compiled a number of different visualizations ranging from precipitation totals maps to archived modeling. The array of images above show 24 hour rainfall totals as depicted by radar, while the animations below shows a cumulative depection of rainfall over the eight days. </p>
       <br />
         
       <div id="video-precip-animation-container">
@@ -183,7 +233,7 @@
         </video>
       </div>
       <br />
-      <h3>Rebuilding and Community Healing</h3>
+      <h3>Rebuilding, Community Healing</h3>
       <p>As seen over and again after disaster strikes, the good will of community members helping one another has been truly remarkable. From local responders to the National Guard, to fellow Coloradans, the response has been something. </p>
       <div id="hang-in-there"></div>
     </div>

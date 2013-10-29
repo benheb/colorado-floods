@@ -187,15 +187,11 @@ path {
 .video-fullscreen-canvas {
   width:100%;
   height:100%;
-  margin:-5px;
-  opacity:0;
 }
 
 .video-fullscreen-post-deluge-canvas {
   width:100%;
   height:100%;
-  margin:-5px;
-  opacity:0;
 }
 
 .video {
@@ -375,21 +371,92 @@ path {
 
 #section-three #seven-day-graphic {
   width:100%;
-  height:40px;
-  margin-bottom:25px;
+  height:90px;
+  margin-bottom:40px;
   margin-top:25px;
 }
 
 #section-three .day {
   float: left;
-  border: 1px solid #000;
-  width: 13.7%;
+  width: 11.7%;
   text-align: center;
   font-size: 0.5em;
+  border-right:1px solid #F7F7F7;
+  position:relative;
+  height:90px;
 }
 
 #section-three .day img {
   height:25px;
+}
+
+.day-top {
+  z-index: 100;
+  position:absolute;
+  width: 100%;
+  text-align: center;
+  top:-20px;
+}
+
+.day-top .total {
+  font-size: 2.4em;
+}
+
+#day-1 {
+  height:2.5%;
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+  background:#2980b9;
+}
+#day-2 {
+  height:10.02%;
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+  background:#2980b9;
+}
+#day-3 {
+  height:19.92%;
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+  background:#2980b9;
+}
+#day-4 {
+  height:90.08%;
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+  background:#2980b9;
+}
+#day-5 {
+  height:24.4%;
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+  background:#2980b9;
+}
+#day-6 {
+  height:1%;
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+  background:#2980b9;
+}
+#day-7 {
+  height:19.4%;
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+  background:#2980b9;
+}
+#day-8 {
+  height:4.9%;
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+  background:#2980b9;
 }
 
 #warning-siren {
@@ -449,12 +516,14 @@ path {
   width:100%;
   height:100%;
   position:relative;
+  opacity:0;
 }
 
 #video-fullscreen-post-deluge-container {
   width:100%;
   height:100%;
   position:relative;
+  opacity:0;
 }
 
 #section-four {
@@ -463,14 +532,15 @@ path {
   background: #F7F7F7;
 }
 
-#section-four #lyons-img {
-  height:auto;
+#section-four #lyons-img-container {
+  height:405px;
   overflow:hidden;
   width:100%;
 }
 
-#lyons-img img {
-  width:100%;
+#lyons-img {
+  width:675px;
+  height:0px;
 }
 
 #section-five{

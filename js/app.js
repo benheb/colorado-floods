@@ -38,10 +38,9 @@ App = function() {
   var self = this;
 
   this._wire();
-  this.effects();
   this.initMap();
   this.donutChart();
-
+  this.effects();
   //Detect when sections appear 
   $('#video-boulder-container, #video-precip-animation-container, #video-fullscreen-container, #video-fullscreen-post-deluge-container').appear();
 
@@ -149,7 +148,6 @@ App.prototype.playVideo = function( val ) {
     })();
   }, 0);
     
-  console.log('video place', video)
   video.play();
   video.volume = 0.2  
 }
@@ -158,9 +156,7 @@ App.prototype.stopVideo = function( val ) {
   if (!val) return;
   var video  = document.getElementById( val );
   
-  console.log('stop', val)
   if ( !video ) return;
-  console.log('stop video: ', val);
   video.pause();
   
 }
