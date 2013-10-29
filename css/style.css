@@ -488,7 +488,8 @@ path {
 
 #plains-fixed {
   width:100%;
-  background: url("../img/eastern-plains.jpg") no-repeat center center fixed;
+  background: url("../img/eastern-plains.jpg") fixed;
+  background: url("../img/eastern-plains.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
