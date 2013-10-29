@@ -2,20 +2,32 @@ App.prototype.initMap = function() {
 
   var down = false, savedScale = null, savedTranslation = null;
   
-  $('#map-drag').on('click', function() {
+  /*
+  *  Map interaction and scroll
+  *
+  */
+
+  $('.scrollblock').on('hover', function() {
+    $('#map-drag').removeClass('selected');
+    $('#map-tip').hide();
+    $('#intro-inset-map, #map-view-outer').css('pointer-events','auto');
+    down = false;
+  });
+
+  $('#map-view-outer').on('click', function() {
     if ( down ) {
-      $(this).removeClass('selected');
+      $('#map-drag').removeClass('selected');
       $('#map-tip').hide();
       $('#intro-inset-map, #map-view-outer').css('pointer-events','auto');
       down = false;
     } else {
-      $(this).addClass('selected');
+      $('#map-drag').addClass('selected');
       $('#map-tip').show();
       $('#intro-inset-map, #map-view-outer').css('pointer-events','none');
       down = true;
     }
   });
-
+  
   var width = Math.max(960, window.innerWidth),
       height = $(window).height(),
       prefix = prefixMatch(["webkit", "ms", "Moz", "O"]);

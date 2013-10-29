@@ -12,7 +12,6 @@
 
 </head>
 <body>
-  <div id='map' class="dark"></div>
   <div id="loader"></div>
   <div id="header">
     <span id="header-left"><a href="http://www.weather5280.com">Weather5280</a></span><span id="header-right">High Water</span>
@@ -29,13 +28,16 @@
       <p>
         <span class="text-large"><b>September 2013</b></span> was Colorado's wettest month on record, an incredible 2.7" above average state-wide. Most of the precipitation that fell occcurred over a 7 day stretch between <b>September 9, 2013</b> to <b>September 16, 2013</b> across northeast Colorado and the Front Range.<br />
       </p>
+      <br />
+      <p>Many communities along the Front Range experienced 100 year and even 1000 year flooding, which means that in any given year there is only a 1% or 0.1% chance for such an event to occur. Explore some of the communities affected by the flooding. 
     </div> 
   </div>
+  <div id='map' class="dark"></div>
   <div id="map-view-outer">
     <div id="map-view-left"></div>
     <div id="intro-inset-map">
       <div id="map-drag">interactive</div>
-      <div id="map-tip">Select place to explore <br /> &middot; <br /> scroll zoom  <br /> &middot; <br /> click drag</div>
+      <div id="map-tip">scroll zoom  <br /> &middot; <br /> click drag <br /> </div>
     </div>
     <div id="map-view-right"></div>
   </div>
@@ -123,7 +125,7 @@
         <source src=data/wall-street-journal.mov type=video/mp4>
       </video>
     </div>
-  <div>
+  </div>
 
   <!-- section five: estes park -->
   <div class="scrollblock" id="section-five">
@@ -154,7 +156,19 @@
       <br />
       <h3 class="text-large">Post Deluge</h3>
       <h5>"A flood of biblical proportion" <span class="light">- NWS Boulder</span></h5>
-      <p>For a bit more perspective on just how much rain fell during the last week, we can take a look at climatological norms, and other historic rain events. Several places along the Front Range received a years worth of precipitation during the event, with the majority falling during a 48 hour period last Wednesday and Thursday.</p>
+      <div id="daily-hour-totals">
+        <img src="img/24hr-10Sept.png"></img>
+        <img src="img/24hr-11Sept.png"></img>
+        <img src="img/24hr-12Sept.png"></img>
+        <img src="img/24hr-13Sept.png"></img>
+        <img src="img/24hr-14Sept.png"></img>
+        <img src="img/24hr-15Sept.png"></img>
+        <img src="img/24hr-16Sept.png"></img>
+      </div>
+      <br />
+      <p>In the days and weeks that followed the flooding came a fury of post analysis from meteorologist around the country. The National Weather Service put has compiled a number of different visualizations ranging from precipitation totals maps to archived modeling. The array of images above show 24 hour rainfall totals as depicted by radar, while the animations below shows a cumulative depection of rainfall over the seven days. </p>
+      <br />
+        
       <div id="video-precip-animation-container">
         <canvas id="video-precip-animation-canvas" class="video-canvas">
         </canvas>
@@ -162,6 +176,9 @@
           <source src=data/precip-totals-animation.mov type=video/mp4>
         </video>
       </div>
+      <br />
+      <h3>Rebuilding and Community Healing</h3>
+      <p>As seen over and again after disaster strikes, the good will of community members helping one another has been truly remarkable. From local responders to the National Guard, to fellow Coloradans, the response has been something. </p>
       <div id="hang-in-there"></div>
     </div>
 
