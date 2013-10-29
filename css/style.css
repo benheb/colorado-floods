@@ -13,7 +13,7 @@ body {
   top:0;
   right:0;
   position:absolute;
-  z-index:100000;
+  z-index:200;
   background:#FFF;
 }
 
@@ -24,7 +24,7 @@ body {
   width: 100%;
   height: 28px;
   box-shadow: 0px 0px 13px -3px #444;
-  z-index: 105;
+  z-index: 115;
   background: #ecf0f1;
   overflow: hidden;
 }
@@ -50,6 +50,7 @@ body {
 }
 
 .scrollblock {
+  z-index:110;
   position:relative;
 }
 
@@ -212,9 +213,9 @@ path {
 }
 
 #section-one {
-  z-index: 115;
   text-shadow: 0 1px 0 #000;
   padding: 0;
+  z-index:120;
   background-color: #111;
   background-image: url('../img/coflood-main-1.jpg');
   background-size: cover;
@@ -238,7 +239,6 @@ path {
 
 /* sections */
 #section-two{
-  z-index: 100;
   border-top: 1px solid #ddd;
   background: #F7F7F7;
   padding-top:40px;
@@ -340,7 +340,6 @@ path {
 }
 
 #section-three{
-  z-index: 25;
   background: #F7F7F7;
 }
 
@@ -433,6 +432,11 @@ path {
   top:0px;
 }
 
+#main-map-section {
+  position:relative;
+  z-index: 80;
+}
+
 #section-three {
   background: #F7F7F7;
 }
@@ -455,7 +459,6 @@ path {
 
 #section-four {
   margin-top:-20px;
-  z-index: 75;
   position:relative;
   background: #F7F7F7;
 }
@@ -472,25 +475,38 @@ path {
 
 #section-five{
   margin-top:-10px;
-  z-index: 75;
   position:relative;
   background: #F7F7F7;
 }
 
 #section-six{
   margin-top:-10px;
-  z-index: 75;
   position:relative;
+  z-index:90;
   background:#F7f7f7;
-  background-image: url("../img/eastern-plains.jpg");
-  background-repeat:no-repeat;
-  background-attachment:fixed;
-  background-position:top; 
+}
+
+#plains-fixed {
+  width:100%;
+  background: url("../img/eastern-plains.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 300px;
+  padding-top: 10px;
+}
+
+#eastern-plains-text {
+  background:#444;
+  opacity:0.8;
+  margin-bottom:15px;
+  color:#FFF;
+  padding:15px;
 }
 
 #section-seven{
   margin-top:-10px;
-  z-index: 75;
   position:relative;
   background: #F7F7F7;
 }

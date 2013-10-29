@@ -45,28 +45,40 @@ App = function() {
   //Detect when sections appear 
   $('#video-boulder-container, #video-precip-animation-container, #video-fullscreen-container, #video-fullscreen-post-deluge-container').appear();
 
+  //gif animation
   $('#video-precip-animation-container').on('appear', function() {
-    self.playVideo('video-precip-animation');
+    if ( !$(this).hasClass('is-active') ) {
+      self.playVideo('video-precip-animation');
+      $(this).addClass('is-active');
+    }
   });
-
-  $('#video-fullscreen-container').on('appear', function() {
-    self.playVideo('video-fullscreen'); 
-  });
-  
   $('#video-precip-animation-container').on('disappear', function() {
     self.stopVideo('video-precip-animation'); 
+    $(this).removeClass('is-active');
   });
 
+  //mid video
+  $('#video-fullscreen-container').on('appear', function() {
+    if ( !$(this).hasClass('is-active') ) {
+      self.playVideo('video-fullscreen'); 
+      $(this).addClass('is-active');
+    }
+  });
   $('#video-fullscreen-container').on('disappear', function() {
     self.stopVideo('video-fullscreen'); 
+    $(this).removeClass('is-active');
   });
 
   //-post-deluge
   $('#video-fullscreen-post-deluge-container').on('appear', function() {
-    self.playVideo('video-fullscreen-post-deluge'); 
+    if ( !$(this).hasClass('is-active') ) {
+      self.playVideo('video-fullscreen-post-deluge'); 
+      $(this).addClass('is-active');
+    }
   });
   $('#video-fullscreen-post-deluge-container').on('disappear', function() {
     self.stopVideo('video-fullscreen-post-deluge'); 
+    $(this).removeClass('is-active');
   });
   
 
@@ -103,6 +115,7 @@ App.prototype._wire = function() {
   //wire up show animations
   $(window).scroll(function(e) {
     self.updateOuterRadial();
+    self.watchFixedElements();
   });
 }
 
@@ -151,3 +164,13 @@ App.prototype.stopVideo = function( val ) {
   video.pause();
   
 }
+
+App.prototype.watchFixedElements = function() {
+  var top = $(window).scrollTop();
+  if ( top > 2700 ) {
+    $('#map').hide();
+  } else {
+    $('#map').show();
+  }
+}
+
