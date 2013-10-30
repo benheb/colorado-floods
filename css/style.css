@@ -549,6 +549,23 @@ path {
   background: #F7F7F7;
 }
 
+#section-five #estes-images {
+  position:relative;
+  min-height: 480px;
+}
+
+#estes-76-one {
+  width:100%;
+  position:absolute;
+  z-index: 5;
+}
+
+#estes-76-two {
+  width:100%;
+  position:absolute;
+  z-index: 10;
+}
+
 #section-six{
   margin-top:-10px;
   position:relative;

@@ -30,6 +30,10 @@ App.prototype.effects = function() {
     end: 405
   });
 
+  scrollorama.animate('#estes-76-two',{ 
+    delay: height + 200, duration: 100, property:'opacity', start:1,end:0
+  });
+
   scrollorama.onBlockChange(function() {
     console.log('You just scrolled to block#'+scrollorama.blockIndex);
   });
