@@ -101,7 +101,7 @@ App.prototype.updateOuterRadial = function() {
 
   var x = $(window).scrollTop() + 200;
   var start = $('#donut-1').offset().top;
-  var end = 2 * pi * 0.89;
+  var end = 2 * pi * 0.85;
   var radian = end - ( ( x - start ) * ( end / ( 200 - start ) ));
   if ( radian > end ) return;
 

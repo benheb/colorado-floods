@@ -25,6 +25,7 @@ $(document).ready(function(){
   $('#section-one').css('height', height+'px');
   $('#fullscreen').css('height', height+'px');
   $('#fullscreen-post-deluge').css('height', height+'px');
+  $('#wv-loop').css('height', height+'px');
 
   $('#loader').fadeOut('fast');
 

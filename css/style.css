@@ -570,7 +570,8 @@ path {
   margin-top:-10px;
   position:relative;
   z-index:90;
-  background:#F7f7f7;
+  background: #F7f7f7 url('../img/continental-divide.png') no-repeat 94% 5%;
+  background-size: 31%;
 }
 
 #plains-fixed {
@@ -645,3 +646,17 @@ path {
   margin: auto 13%;
 }
 
+#wv-loop {
+  height:400px;
+  width:100%;
+  background: url("../img/goes-wv-loop.gif");
+  background-size: 100%;
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+  -webkit-filter: grayscale(80%);
+  opacity:0.8;
+  margin-bottom:20px;
+}
+
+#continental-divide {
+
+}
