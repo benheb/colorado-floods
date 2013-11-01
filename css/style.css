@@ -13,7 +13,7 @@ body {
   top:0;
   right:0;
   position:absolute;
-  z-index:200;
+  z-index:500;
   background:#FFF;
 }
 
@@ -651,8 +651,9 @@ path {
   width:100%;
   background: url("../img/goes-wv-loop.gif");
   background-size: 100%;
-  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
-  -webkit-filter: grayscale(80%);
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+  filter: gray; /* IE6-9 */
+  -webkit-filter: grayscale(80%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
   opacity:0.8;
   margin-bottom:20px;
 }

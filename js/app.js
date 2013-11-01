@@ -27,10 +27,13 @@ $(document).ready(function(){
   $('#fullscreen-post-deluge').css('height', height+'px');
   $('#wv-loop').css('height', height+'px');
 
-  $('#loader').fadeOut('fast');
+  //$('#loader').fadeOut('fast');
 
   console.log('APP READY');
-  $(window).load(function(){$('html, body').animate({scrollTop:0}, 'fast');});
+  $(window).load(function(){
+    $('html, body').animate({scrollTop:0}, 'fast');
+    $('#loader').fadeOut('fast');
+  });
   
   app = new App();
 });

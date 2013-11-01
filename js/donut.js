@@ -106,10 +106,6 @@ App.prototype.updateOuterRadial = function() {
   if ( radian > end ) return;
 
   if ( this.arcPath ) {
-    this.arcPath.transition()
-      .duration(50)
-      .call(arcTween, radian);
-
     function arcTween(transition, newAngle) {
       transition.attrTween("d", function(d) {
         var interpolate = d3.interpolate(d.endAngle, newAngle);
@@ -119,5 +115,10 @@ App.prototype.updateOuterRadial = function() {
         };
       });
     }
+
+    this.arcPath.transition()
+      .duration(50)
+      .call(arcTween, radian);
+    
   }
 }
