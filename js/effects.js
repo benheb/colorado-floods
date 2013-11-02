@@ -34,9 +34,4 @@ App.prototype.effects = function() {
     delay: height + 100, duration: 100, property:'opacity', start:1,end:0
   });
 
-  scrollorama.onBlockChange(function() {
-    console.log('You just scrolled to block#'+scrollorama.blockIndex);
-  });
-
-
 }
