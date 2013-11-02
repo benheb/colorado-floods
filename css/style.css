@@ -26,7 +26,6 @@ body {
   box-shadow: 0px 0px 13px -3px #444;
   z-index: 115;
   background: #ecf0f1;
-  overflow: hidden;
 }
 
 #header h4 {
@@ -47,6 +46,10 @@ body {
   position: absolute;
   left:10px;
   top:0px;
+}
+
+.fb-like {
+  margin-top: 4px;
 }
 
 .scrollblock {
@@ -345,7 +348,7 @@ path {
 
 #section-three #donut-1-container {
   width:100%;
-  height:400px;
+  height:440px;
   position:relative;
 }
 
@@ -645,6 +648,13 @@ path {
   margin: auto 13%;
 }
 
+#section-eight {
+  margin-top:-10px;
+  position:relative;
+  background: #F7F7F7;
+  z-index:60;
+}
+
 #wv-loop-container {
   width:100%;
   height:700px;
@@ -670,6 +680,8 @@ path {
   opacity:0.8;
 }
 
-#continental-divide {
-
+#section-nine {
+  margin-top:-10px;
+  position:relative;
+  background: #F7F7F7;
 }

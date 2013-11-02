@@ -3,8 +3,8 @@ App.prototype.donutChart = function() {
 
   $('#donut-1 svg').remove();
   
-  this.chartWidth = 400;
-  this.chartHeight = 400;
+  this.chartWidth = $(window).width() / 3;
+  this.chartHeight = $(window).width() / 3;
   this.chartRadius = Math.min(this.chartWidth, this.chartHeight) / 2;
 
   var color = d3.scale.ordinal()

@@ -22,10 +22,12 @@ $(document).ready(function(){
   */
 
   var height = $(window).height();
+  var width = $(window).width();
   $('#section-one').css('height', height+'px');
   $('#fullscreen').css('height', height+'px');
   $('#fullscreen-post-deluge').css('height', height+'px');
   $('#wv-loop').css('height', height+'px');
+  $('#donut-1-container').css('height', ((width / 3)) + 'px')
 
   //$('#loader').fadeOut('fast');
 
@@ -115,6 +117,11 @@ App.prototype._wire = function() {
 
   });
 
+
+  //layzy LOAD
+  console.log('HERE?!?!!')
+  $("img.lazy").lazyload();
+
   //wire up show animations
   $(window).scroll(function(e) {
     self.updateOuterRadial();
@@ -171,6 +178,11 @@ App.prototype.watchFixedElements = function() {
     $('#map').hide();
   } else {
     $('#map').show();
+  }
+  if ( top < 8107 ) {
+    $('#wv-loop').hide();
+  } else {
+    $('#wv-loop').show();
   }
 }
 
