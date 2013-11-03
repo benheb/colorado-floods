@@ -28,24 +28,27 @@ $(document).ready(function(){
   $('#fullscreen-post-deluge').css('height', height+'px');
   $('#wv-loop').css('height', height+'px');
   $('#donut-1-container').css('height', ((width / 3)) + 'px')
+  $('.spinner-container').css('left', ((width/2)-125)+"px");
 
-  //$('#loader').fadeOut('fast');
+  app = new App();
 
-  console.log('APP READY');
   $(window).load(function(){
-    $('html, body').animate({scrollTop:0}, 'fast');
-    $('#loader').fadeOut('fast');
+    $('body').removeClass('no-scroll');
+    $('.spinner-container').hide();
+
+    //$('html, body').animate({scrollTop:0}, 'fast');
+    //$('#loader').fadeOut('fast');
+    app.initMap();
+    app.donutChart();
   });
   
-  app = new App();
+  
 });
 
 App = function() {
   var self = this;
 
   this._wire();
-  this.initMap();
-  this.donutChart();
   this.effects();
   //Detect when sections appear 
   $('#video-boulder-container, #video-precip-animation-container, #video-fullscreen-container, #video-fullscreen-post-deluge-container').appear();
@@ -101,7 +104,6 @@ App = function() {
 
 App.prototype._wire = function() {
   var self = this;
-  console.log('wire')
   
   //height of current window
   var height = $(window).height();
@@ -118,12 +120,12 @@ App.prototype._wire = function() {
   });
 
 
-  //layzy LOAD
-  console.log('HERE?!?!!')
+  //image lazy loader
   $("img.lazy").lazyload();
 
   //wire up show animations
   $(window).scroll(function(e) {
+    if ( $('body').hasClass('no-scroll') ) return;
     self.updateOuterRadial();
     self.watchFixedElements();
   });

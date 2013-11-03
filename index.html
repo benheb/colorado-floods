@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="css/style.css"></link>
 
 </head>
-<body>
+<body class="no-scroll">
   <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -36,7 +36,6 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
     
-  <div id="loader"></div>
   <div id="header">
     <span id="header-left">
       <a href="http://www.weather5280.com">Weather5280</a>
@@ -52,6 +51,10 @@
   <!-- section one: welcome -->
   <div class="scrollblock" id="section-one">
     <span><h1>High Water</h1><h2>Colorado Floods, 2013</h2></span>
+    <div class="spinner-container">
+      <div class="spinner"></div>
+      <div id="loading">Loading...</div>
+    </div>
   </div>
 
   
@@ -193,14 +196,8 @@
       </p>
       <br />
       <div id="video-boulder-container">
-        <div class="play" id="play-boulder">Play</div>
         <canvas id="video-boulder-canvas" class="video-canvas">
         </canvas>
-        <video preload="metadata" id="video-boulder" class="video" loop>
-          "Your browser does not support <code>HTML5 video</code>"
-          <source src="data/boulder-flood.mp4" type="video/mp4">
-          <source src="data/boulder-flood.webmhd.webm" type="video/webm">
-        </video>
       </div>
       <p>
         Homes and roads were destroyed in Clear Creek canyon as the river carved new landscapes through the dark of night. The extent of the damage would not be known until morning, and even then not comprehended for days. 
@@ -235,7 +232,7 @@
       </p>
       <br />
       <div id="lyons-img-container">
-        <img id="lyons-img" src="img/lyons.png"></img>
+        <img id="lyons-img" class="lazy" src="img/white.gif" data-original="img/lyons.png">
       </div>
       <br />
       <p>
@@ -257,8 +254,8 @@
       </p>
       <br />
       <div id="estes-images">
-        <img id="estes-76-one" src="img/estes-park.jpg"></img>
-        <img id="estes-76-two" src="img/estes-1976.jpg"></img>
+        <img id="estes-76-one" class="lazy" src="img/white.gif" data-original="img/estes-park.jpg">
+        <img id="estes-76-two" class="lazy" src="img/white.gif" data-original="img/estes-1976.jpg">
       </div>
       <p>
         <div style="text-align:center">
@@ -309,13 +306,13 @@
       <h5>“A flood of biblical proportion” <span class="light">- NWS Boulder</span></h5>
       <br />
       <div id="daily-hour-totals">
-        <img src="img/24hr-10Sept.png"></img>
-        <img src="img/24hr-11Sept.png"></img>
-        <img src="img/24hr-12Sept.png"></img>
-        <img src="img/24hr-13Sept.png"></img>
-        <img src="img/24hr-14Sept.png"></img>
-        <img src="img/24hr-15Sept.png"></img>
-        <img src="img/24hr-16Sept.png"></img>
+        <img class="lazy" src="img/white.gif" data-original="img/24hr-10Sept.png">
+        <img class="lazy" src="img/white.gif" data-original="img/24hr-11Sept.png">
+        <img class="lazy" src="img/white.gif" data-original="img/24hr-12Sept.png">
+        <img class="lazy" src="img/white.gif" data-original="img/24hr-13Sept.png">
+        <img class="lazy" src="img/white.gif" data-original="img/24hr-14Sept.png">
+        <img class="lazy" src="img/white.gif" data-original="img/24hr-15Sept.png">
+        <img class="lazy" src="img/white.gif" data-original="img/24hr-16Sept.png">
       </div>
       <br />
       <p>
@@ -341,7 +338,7 @@
   </div>
   <div class="scrollblock" id="section-eight">
     <div id="wv-loop">
-      <img class="lazy" src="img/white.gif" data-original="img/goes-wv-loop.gif"  width="765" height="574">
+      <img class="lazy" src="img/white.gif" data-original="img/goes-wv-loop.gif">
     </div>
   </div>
   <div class="scrollblock" id="section-nine">
