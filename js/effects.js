@@ -34,4 +34,8 @@ App.prototype.effects = function() {
     delay: height + 100, duration: 100, property:'opacity', start:1,end:0
   });
 
+  scrollorama.animate('#footer',{ 
+    delay: 0, duration: 400, property:'height', start:0,end:300
+  });
+
 }

@@ -23,18 +23,17 @@ $(document).ready(function(){
 
   var height = $(window).height();
   var width = $(window).width();
-  $('#section-one').css('height', height+'px');
   $('#fullscreen').css('height', height+'px');
   $('#fullscreen-post-deluge').css('height', height+'px');
   $('#wv-loop').css('height', height+'px');
   $('#donut-1-container').css('height', ((width / 3)) + 'px')
-  $('.spinner-container').css('left', ((width/2)-125)+"px");
-
+  
   app = new App();
 
   $(window).load(function(){
     $('body').removeClass('no-scroll');
-    $('.spinner-container').hide();
+    $('.spinner').hide();
+    $('#loading').html('scroll down');
 
     //$('html, body').animate({scrollTop:0}, 'fast');
     //$('#loader').fadeOut('fast');
@@ -50,6 +49,9 @@ App = function() {
 
   this._wire();
   this.effects();
+
+  $('#main-title').fadeIn();
+
   //Detect when sections appear 
   $('#video-boulder-container, #video-precip-animation-container, #video-fullscreen-container, #video-fullscreen-post-deluge-container').appear();
 
@@ -112,10 +114,11 @@ App.prototype._wire = function() {
   $(window).on('resize', function() {
     height = $(window).height();
     width = $(window).width();
-    
+      
     $('#section-one').css('height', height+'px');
     
     $('#map').css('width', width+'px');
+    $('#map').css('height', height+'px');
 
   });
 
@@ -126,6 +129,7 @@ App.prototype._wire = function() {
   //wire up show animations
   $(window).scroll(function(e) {
     if ( $('body').hasClass('no-scroll') ) return;
+    $('#loading').fadeOut();
     self.updateOuterRadial();
     self.watchFixedElements();
   });
