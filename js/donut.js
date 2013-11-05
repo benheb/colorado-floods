@@ -8,7 +8,10 @@ App.prototype.donutChart = function() {
   this.chartRadius = Math.min(this.chartWidth, this.chartHeight) / 2;
 
   var color = d3.scale.ordinal()
-    .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+    //.range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+    .range([
+      '#ecf0f1', '#d0dde8', '#98b6d5', '#2980b9','#2980b9', '#2980b9', '#5f96c4', '#5f96c4', '#98b6d5', '#98b6d5','#a9c1db','#cbd9e6','#ecf0f1'
+    ]);
 
   var arc = d3.svg.arc()
       .outerRadius(this.chartRadius - 15)
