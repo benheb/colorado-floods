@@ -31,7 +31,7 @@ App.prototype.effects = function() {
   });
 
   scrollorama.animate('#estes-76-two',{ 
-    delay: height + 100, duration: 100, property:'opacity', start:1,end:0
+    delay: height + 200, duration: 100, property:'opacity', start:1,end:0
   });
 
   scrollorama.animate('#footer',{ 

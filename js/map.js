@@ -169,8 +169,13 @@ App.prototype.initMap = function() {
         var id = d.properties.Place.toLowerCase().replace(/ /g, '-');
         var height = $(window).height();
         var top = $(window).scrollTop();
-        var sections = { "boulder": 2, "estes-park": 3, "lyons": 4, "eastern-plains": 5 }
-        $('body,html').animate({scrollTop: ( height ) * sections[ id ] }, 2400);
+        var sections = { 
+          "boulder": $('#section-three').offset().top, 
+          "lyons": $('#section-four').offset().top, 
+          "estes-park": $('#section-four').offset().top, 
+          "eastern-plains": $('#section-six').offset().top 
+        }
+        $('body,html').animate({scrollTop: sections[ id ] }, 2400);
       });
 
     g.selectAll('text')

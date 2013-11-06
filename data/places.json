@@ -52,19 +52,6 @@
           40.38944285970336
         ]
       }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "Place": "Aurora"
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -104.84939575195311,
-          39.734650174341866
-        ]
-      }
     }
   ]
 }

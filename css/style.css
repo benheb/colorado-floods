@@ -204,7 +204,7 @@ path {
 }
 
 .video {
-  display:none;
+  width:100%;
 }
 
 .location-coords {
@@ -557,10 +557,11 @@ to {transform: rotate(359deg);}
 }
 
 #section-three #video-boulder-container {
-  width:100%;
-  height:325px;
-  margin-bottom:20px;
-  position:relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
 }
 
 #boulder-title {
@@ -592,7 +593,7 @@ to {transform: rotate(359deg);}
 
 #video-fullscreen-post-deluge-container {
   width:100%;
-  height:102%;
+  height:100%;
   position:relative;
   opacity:0;
 }
@@ -672,7 +673,7 @@ to {transform: rotate(359deg);}
   background: #F7F7F7;
 }
 
-#section-seven #hang-in-there {
+#section-nine #hang-in-there {
   background: url('../img/hang-in-there.jpg') no-repeat;
   background-size: 100%;
   width:100%;
@@ -692,7 +693,7 @@ to {transform: rotate(359deg);}
 
 #section-seven #video-precip-animation-container {
   width:100%;
-  height:475px;
+  height:445px;
   margin-bottom:20px;
   position:relative;
 }
@@ -702,7 +703,7 @@ to {transform: rotate(359deg);}
 }
 
 #fullscreen-post-deluge {
-  background: #444;
+  background: #F7f7f7;
 }
 
 #fullscreen-post-deluge-blurb {
@@ -757,7 +758,7 @@ to {transform: rotate(359deg);}
 }
 
 #section-ten {
-  margin-top: 15px;
+  margin-top: -10px;
   z-index:100;
   background:#F7F7F7;
 }

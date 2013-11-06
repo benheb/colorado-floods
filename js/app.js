@@ -23,8 +23,8 @@ $(document).ready(function(){
 
   var height = $(window).height();
   var width = $(window).width();
-  $('#fullscreen').css('height', height+'px');
-  $('#fullscreen-post-deluge').css('height', height+'px');
+  //$('#fullscreen').css('height', height+'px');
+  //$('#fullscreen-post-deluge').css('height', height+'px');
   $('#wv-loop').css('height', height+'px');
   $('#donut-1-container').css('height', ((width / 3)) + 'px')
   
@@ -142,29 +142,8 @@ App.prototype._wire = function() {
  */
 App.prototype.playVideo = function( val ) {
   var self = this;
-  var canvas = document.getElementById( val+'-canvas' );
-  if ( !canvas ) return; 
-  var ctx    = canvas.getContext('2d');
+
   var video  = document.getElementById( val );
-  
-  video.addEventListener('play', function () {
-    var $this = this; //cache
-    var ratio = video.videoWidth / video.videoHeight;
-    var w = video.videoWidth;
-    var h = parseInt(w / ratio, 10);
-    canvas.width = w;
-    canvas.height = h;
-    ctx.width = w;
-    ctx.height = h;
-    
-    (function loop() {
-        if (!$this.paused && !$this.ended) {
-            ctx.drawImage($this, 0, 0);
-            setTimeout(loop, 1000 / 60); // drawing at 30fps
-        }
-    })();
-  }, 0);
-    
   video.play();
   video.volume = 0.2  
 }

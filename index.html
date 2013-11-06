@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html>
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -9,20 +9,17 @@
   
   <meta name="keywords" content="Boulder Colorado, Colorado Floods, COFlood, Estes Park, Lyons, Natural Disaster">
   <meta name="news_keywords" content="Colorado, Flood, Flash Flood, September 2013, Disaster">
-  <meta itemprop="description" name="description" content="Who Will Win Control of the South China Sea?">
   
   <!-- facebook --> 
-  <meta property="og:type" content="article"/>
   <meta property="og:title" content="High Water | Colorado Floods, 2013"/>
   <meta property="og:description" content="September 2013 brought catastrophic flooding to Colorado, taking lives and changing landscapes in what will almost certainly become one of the state’s costliest disasters in history.">
   <meta property="og:url" content="http://www.weather5280.com/high-water"/>
   <meta property="og:image" content="http://www.weather5280.com/high-water/img/coflood-main-1.jpg"/>
 
   <meta name="viewport" content="initial-scale=1,width=device-width,height=device-height,user-scalable=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700">
-  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css">
+  
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700"></link>
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css"></link>
   <link rel="stylesheet" href="css/style.css"></link>
 
 </head>
@@ -86,7 +83,7 @@
       <div id="map-view-left"></div>
       <div id="intro-inset-map">
         <div id="map-drag">interactive</div>
-        <div id="map-tip">scroll zoom  <br /> &middot; <br /> click drag <br /> </div>
+        <div id="map-tip">scroll zoom  <br /> &middot; <br /> click drag <br /> &middot; <br /> location click will skip to section <br /> </div>
       </div>
       <div id="map-view-right"></div>
     </div>
@@ -101,7 +98,7 @@
       <h5>“Precipitation for September 2013 was 936% of the monthly normal”</h5>
       <br />
       <p>
-        Boulder was hit particularly hard during this period of unexpected precipitation. CoCoRaHS storm reports ranged from 12" to 21" across the Front Range foothills of Boulder County, an amount equivalent to -- even exceeding -- that of a major tropical cyclone, or nearly that of an entire year's worth of precipitation for the region.
+        Boulder was hit particularly hard during this period of precipitation. CoCoRaHS storm reports ranged from 12" to 21" across the Front Range foothills of Boulder County, an amount equivalent to -- even exceeding -- that of a major tropical cyclone, or nearly that of an entire year's worth of precipitation for the region.
       </p>
       <br />
       <div id="donut-1-container">
@@ -197,9 +194,7 @@
       <br />
       <div id="video-boulder-container">
         <div class="play" id="play-boulder">Play</div>
-        <canvas id="video-boulder-canvas" class="video-canvas">
-        </canvas>
-        <video preload="metadata" id="video-boulder" class="video" loop>
+        <video preload="auto" id="video-boulder" class="video" loop>
           "Your browser does not support <code>HTML5 video</code>"
           <source src="data/boulder-flood.mp4" type="video/mp4">
           <source src="data/boulder-flood.webmhd.webm" type="video/webm">
@@ -215,9 +210,7 @@
     <!-- full screen video placeholder --> 
   <div class="scrollblock" id="fullscreen">
     <div id="video-fullscreen-container">
-      <canvas id="video-fullscreen-canvas" class="video-canvas">
-      </canvas>
-      <video preload="metadata" id="video-fullscreen" class="video" loop>
+      <video preload="auto" id="video-fullscreen" class="video" loop>
         "Your browser does not support <code>HTML5 video</code>"
         <source src="data/wall-street-journal.mp4" type="video/mp4">
         <source src="data/wall-street-journal.webmhd.webm" type="video/webm">
@@ -327,15 +320,12 @@
       <br />
         
       <div id="video-precip-animation-container">
-        <canvas id="video-precip-animation-canvas" class="video-canvas">
-        </canvas>
-        <video preload="metadata" id="video-precip-animation" class="video" loop>
+        <video preload="auto" id="video-precip-animation" class="video" loop>
           "Your browser does not support <code>HTML5 video</code>"
           <source src="data/precip-totals-animation.mp4" type="video/mp4">
           <source src="data/precip-totals-animation.webmhd.webm" type="video/webm">
         </video>
       </div>
-      <br />
       <p>
         Meteorologically speaking, this event was extraordinary. It took a combination of all the wrong ingredients to make it happen. A remarkably strong late season monsoonal flow pushing deep moisture up from the Gulf of Mexico, colliding with a stalled out frontal boundary providing energy and lift from the north, led to the prolonged period of heavy rain for the state. From space, the scene was truly stunning.
       </p>
@@ -373,11 +363,9 @@
 
   <!-- full screen video placeholder --> 
   <div class="scrollblock" id="fullscreen-post-deluge">
-    <div id="fullscreen-post-deluge-blurb">Overpasses lay in ruin outside Lyons, CO one month after floods</div>
+    <div id="fullscreen-post-deluge-blurb">An Overpass lays in ruin outside Lyons, CO one month after floods</div>
     <div id="video-fullscreen-post-deluge-container">
-      <canvas id="video-fullscreen-post-deluge-canvas" class="video-canvas">
-      </canvas>
-      <video preload="metadata" id="video-fullscreen-post-deluge" class="video" loop>
+      <video preload="auto" id="video-fullscreen-post-deluge" class="video" loop>
         "Your browser does not support <code>HTML5 video</code>"
         <source src="data/flood-video-clip.mp4" type="video/mp4">
         <source src="data/flood-video-clip.webmhd.webm" type="video/webm">
@@ -391,6 +379,7 @@
         <h5>Videos</h5>
         <p>Boulder Flood Media Report: <a href="http://www.thedenverchannel.com/">The Denver Channel</a></p>
         <p>Storm Totals Animation: <a href="http://www.youtube.com/user/NOAAVisualizations">NOAA Visualization Lab</a></p>
+        <p>Flooding RAW: <a href="http://online.wsj.com/home-page">Wall Street Journal</a></p>
         <p>Flooding, Lyons: <a href="http://www.twitter.com/brendansweather">Brendan Heberton</a></p>
       </div>
       <div id="footer-right">
